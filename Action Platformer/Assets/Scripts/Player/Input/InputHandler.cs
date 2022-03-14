@@ -5,29 +5,15 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    private Vector2 movementInput;
+    public Vector2 MovementInput { get; private set; }
 
     public void OnMoveInput(InputAction.CallbackContext context)    
     {
-        movementInput = context.ReadValue<Vector2>();
-        Debug.Log(movementInput);
+        MovementInput = context.ReadValue<Vector2>();
     }
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            Debug.Log("Jump");
-        }
-
-        if (context.performed)
-        {
-            Debug.Log("Jump Hold");
-        }
-
-        if (context.canceled)
-        {
-            Debug.Log("Jump Released");
-        }
+        
     }
 }

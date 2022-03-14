@@ -8,9 +8,10 @@ public class PlayerState
     protected PlayerStateMachine stateMachine;
     protected PlayerData playerData;
 
-    //It holds animation start time.
+    //It holds animation time.
     protected float startTime;
 
+    //Animation reference
     private string animBoolName;
 
     //A constructor to create states for player.
@@ -22,16 +23,16 @@ public class PlayerState
         this.animBoolName = animBoolName;
     }
 
-
     public virtual void Enter()
     {
         DoChecks();
+        player.Animator.SetBool(animBoolName, true);
         startTime = Time.time;
     }
 
     public virtual void Exit()
     {
-
+        player.Animator.SetBool(animBoolName, false);
     }
 
     //Do logical operations for player.
