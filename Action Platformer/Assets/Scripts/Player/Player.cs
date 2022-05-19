@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] Transform wallCheck;
     [SerializeField] float wallCheckRadius = 0.4f;
 
+    [SerializeField] int health = 100;
+
     PlayerInputHandler inputHandler;
     PlayerMovements playerMovements;
     PlayerAnimations playerAnimations;
@@ -72,6 +74,19 @@ public class Player : MonoBehaviour
         {
             facingDirection *= -1;
             transform.Rotate(0.0f, 180.0f, 0.0f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Axe"))
+        {
+            health = health - 50;
+        }
+
+        if (health == 0 || health < 0)
+        {
+            Destroy(gameObject);
         }
     }
 
