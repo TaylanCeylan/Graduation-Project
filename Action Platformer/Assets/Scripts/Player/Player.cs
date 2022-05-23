@@ -94,6 +94,11 @@ public class Player : MonoBehaviour
             health = health - 100;
         }
 
+        if (collision.CompareTag("Grenade"))
+        {
+            health = health - 100;
+        }
+
         if (health == 0 || health < 0)
         {
             Destroy(gameObject);
