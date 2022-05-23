@@ -84,6 +84,16 @@ public class Player : MonoBehaviour
             health = health - 50;
         }
 
+        if (collision.CompareTag("Arrow"))
+        {
+            health = health - 20;
+        }
+
+        if (collision.CompareTag("Melee"))
+        {
+            health = health - 100;
+        }
+
         if (health == 0 || health < 0)
         {
             Destroy(gameObject);
