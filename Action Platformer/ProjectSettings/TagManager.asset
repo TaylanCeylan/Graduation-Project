@@ -11,6 +11,7 @@ TagManager:
   - MeleeAttack
   - Melee
   - Grenade
+  - HealthPotion
   layers:
   - Default
   - TransparentFX
