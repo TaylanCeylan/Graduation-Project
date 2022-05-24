@@ -335,7 +335,10 @@ MonoBehaviour:
     m_Bits: 8
   wallCheck: {fileID: 7362460698470585738}
   wallCheckRadius: 0.4
-  health: 200
+  health: 100
+  playerCoins: 0
+  healthBar: {fileID: 0}
+  currentHealth: 0
 --- !u!114 &7362460698478414144
 MonoBehaviour:
   m_ObjectHideFlags: 0

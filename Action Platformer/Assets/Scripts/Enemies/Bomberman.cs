@@ -21,6 +21,8 @@ public class Bomberman : MonoBehaviour
     [SerializeField] GameObject grenade;
     [SerializeField] Transform firePoint;
 
+    public Player player;
+
     bool isGrounded;
     bool isFacingWall;
     bool isFacingRight = true;
@@ -89,6 +91,7 @@ public class Bomberman : MonoBehaviour
         if (health == 0 || health < 0)
         {
             Destroy(gameObject);
+            player.playerCoins += 50;
         }
     }
 

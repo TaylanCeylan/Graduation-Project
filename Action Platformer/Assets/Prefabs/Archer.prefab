@@ -183,6 +183,7 @@ MonoBehaviour:
   playerCheckRadius: 7.41
   arrow: {fileID: 1172752704762138525, guid: 25a80b091ef25d14892453c547f8c3a5, type: 3}
   firePoint: {fileID: 8828081695359098831}
+  player: {fileID: 0}
 --- !u!1 &8828081694438439221
 GameObject:
   m_ObjectHideFlags: 0

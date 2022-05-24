@@ -20,6 +20,7 @@ public class Gunslinger : MonoBehaviour
     [SerializeField] GameObject arrow;
     [SerializeField] Transform firePoint;
 
+    public Player player;
 
     bool isGrounded;
     bool isFacingWall;
@@ -89,6 +90,7 @@ public class Gunslinger : MonoBehaviour
         if (health == 0 || health < 0)
         {
             Destroy(gameObject);
+            player.playerCoins += 50;
         }
     }
 

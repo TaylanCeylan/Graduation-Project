@@ -15,6 +15,7 @@ public class Skeleton : MonoBehaviour
 
     [SerializeField] LayerMask whatIsPlayer;
 
+    public Player player;
 
     bool isGrounded;
     bool isFacingWall;
@@ -84,6 +85,7 @@ public class Skeleton : MonoBehaviour
         if (health == 0 || health < 0)
         {
             Destroy(gameObject);
+            player.playerCoins += 50;
         }
     }
 

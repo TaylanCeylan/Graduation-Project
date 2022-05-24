@@ -22,6 +22,7 @@ public class Bulldozer : MonoBehaviour
 
     [SerializeField] Transform playerCheck2;
 
+    public Player player;
 
     bool isGrounded;
     bool isFacingWall;
@@ -100,6 +101,7 @@ public class Bulldozer : MonoBehaviour
         if (health == 0 || health < 0)
         {
             Destroy(gameObject);
+            player.playerCoins += 50;
         }
     }
 

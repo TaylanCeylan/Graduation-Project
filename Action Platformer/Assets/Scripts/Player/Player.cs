@@ -16,7 +16,14 @@ public class Player : MonoBehaviour
     [SerializeField] Transform wallCheck;
     [SerializeField] float wallCheckRadius = 0.4f;
 
-    [SerializeField] int health = 100;
+    [SerializeField] public int health = 100;
+
+    [SerializeField] public int playerCoins = 0;
+
+    public HealthBar healthBar;
+
+    [HideInInspector]
+    public int currentHealth;
 
     PlayerInputHandler inputHandler;
     PlayerMovements playerMovements;
@@ -47,6 +54,9 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
 
         facingDirection = 1;
+
+        currentHealth = health;
+        healthBar.SetMaxHealth(health);
     }
 
     // Update is called once per frame
@@ -81,32 +91,39 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Axe"))
         {
-            health = health - 50;
+            currentHealth = currentHealth - 50;
         }
 
         if (collision.CompareTag("Arrow"))
         {
-            health = health - 20;
+            currentHealth = currentHealth - 20;
         }
 
         if (collision.CompareTag("Melee"))
         {
-            health = health - 100;
+            currentHealth = currentHealth - 100;
         }
 
         if (collision.CompareTag("Grenade"))
         {
-            health = health - 100;
+            currentHealth = currentHealth - 100;
         }
 
         if (collision.CompareTag("HealthPotion"))
         {
-            health = health + 50;
+            currentHealth = currentHealth + 50;
         }
 
-        if (health == 0 || health < 0)
+        if (currentHealth == 0 || currentHealth < 0)
         {
             Destroy(gameObject);
+        }
+
+        healthBar.SetHealth(currentHealth);
+
+        if (currentHealth > health)
+        {
+            currentHealth = health;
         }
     }
 

@@ -8,10 +8,10 @@ public class HealthPotion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            Instantiate(particle, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
+            if (collision.CompareTag("Player"))
+            {
+                Instantiate(particle, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
     }
 }
