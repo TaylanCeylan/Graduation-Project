@@ -12,6 +12,8 @@ TagManager:
   - Melee
   - Grenade
   - HealthPotion
+  - LevelTrigger
+  - PlayerMelee
   layers:
   - Default
   - TransparentFX

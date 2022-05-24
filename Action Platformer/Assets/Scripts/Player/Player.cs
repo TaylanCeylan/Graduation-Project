@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
     bool isJumped;
     bool isTouchingWall;
     bool isCrouched;
+    bool isPerformingMelee;
 
     private void Awake()
     {
@@ -67,7 +69,7 @@ public class Player : MonoBehaviour
         playerMovements.WallSlide(rb2D, isGrounded, isTouchingWall, input);
         playerMovements.Crouch(rb2D, isGrounded, isCrouched);
 
-        playerAnimations.SetAnimations(anim, input, isGrounded, isJumped, isTouchingWall, isCrouched, rb2D);
+        playerAnimations.SetAnimations(anim, input, isGrounded, isJumped, isTouchingWall, isCrouched, isPerformingMelee, rb2D);
 
         CheckSurroundings();
         FlipPlayer();
@@ -75,6 +77,7 @@ public class Player : MonoBehaviour
         input = inputHandler.xInput;
         isJumped = inputHandler.IsJumped;
         isCrouched = inputHandler.IsCrouched;
+        isPerformingMelee = inputHandler.IsPerformingMelee;
 
     }
 
@@ -114,9 +117,15 @@ public class Player : MonoBehaviour
             currentHealth = currentHealth + 50;
         }
 
+        if (collision.CompareTag("LevelTrigger"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
         if (currentHealth == 0 || currentHealth < 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 
         healthBar.SetHealth(currentHealth);

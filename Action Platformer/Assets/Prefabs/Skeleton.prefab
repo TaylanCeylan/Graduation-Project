@@ -276,6 +276,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  player: {fileID: 0}
 --- !u!95 &5121847057082915892
 Animator:
   serializedVersion: 3

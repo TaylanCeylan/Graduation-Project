@@ -9,7 +9,15 @@ public class PlayerInputHandler : MonoBehaviour
     public bool IsJumped { get; set; }
     public bool IsCrouched { get; private set; }
     public bool IsShooting { get; set; }
- 
+    public bool IsPerformingMelee { get; set; }
+
+    Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     public void MoveInput(InputAction.CallbackContext context)
     {
         xInput = context.ReadValue<Vector2>();
@@ -58,6 +66,19 @@ public class PlayerInputHandler : MonoBehaviour
             IsShooting = true;
         }
 
+    }
+
+    public void MeleeInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            IsPerformingMelee = true;
+        }
+
+        if (context.canceled)
+        {
+            IsPerformingMelee = false;
+        }
     }
 
 }
