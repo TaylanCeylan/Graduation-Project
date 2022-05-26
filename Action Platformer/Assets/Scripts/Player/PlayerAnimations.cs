@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class PlayerAnimations
 {
-    public void SetAnimations(Animator anim, Vector2 input, bool isGrounded, bool isJumping, bool isTouchingWall, bool isCrouching, bool isPerformingMelee, Rigidbody2D rb2D)
+    public void SetAnimations(Animator anim, Vector2 input, bool isGrounded, bool isJumping, bool isTouchingWall, bool isCrouching, bool isPerformingMelee, bool isShooting, Rigidbody2D rb2D)
     {
         anim.SetFloat("yVelocity", rb2D.velocity.y);
 
+        if (isShooting)
+        {
+            anim.SetBool("magic", true);
+        }
+        else if (!isShooting)
+        {
+            anim.SetBool("magic", false);
+        }
+
+        if (isPerformingMelee)
+        {
+            anim.SetBool("melee", true);
+        }
+        else if (!isPerformingMelee)
+        {
+            anim.SetBool("melee", false);
+        }
+
         if (isGrounded)
         {
-            if (isPerformingMelee)
-            {
-                anim.SetBool("melee", true);
-            }
-            else if (!isPerformingMelee)
-            {
-                anim.SetBool("melee", false);
-            }
-
             if (input.x != 0)
             {
                 anim.SetBool("crouch", false);

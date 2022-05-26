@@ -65,6 +65,10 @@ public class PlayerInputHandler : MonoBehaviour
         {
             IsShooting = true;
         }
+        if (context.canceled)
+        {
+            IsShooting = false;
+        }
 
     }
 

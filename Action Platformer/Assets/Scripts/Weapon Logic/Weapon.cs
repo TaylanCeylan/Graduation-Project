@@ -17,15 +17,12 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inputHandler.IsShooting)
-        {
-            Shoot();
-        }
+
     }
 
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        inputHandler.IsShooting = false;
+        //inputHandler.IsShooting = false;
     }
 }
