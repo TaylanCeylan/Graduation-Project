@@ -167,7 +167,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4944230376442633554, guid: 3c5434c9de5c5db429f35ce6139ecec9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -218,7 +218,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2522236609224208418
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -273,6 +273,7 @@ MonoBehaviour:
   attackRange: {fileID: 2522236609627926948}
   attackRangeRadius: 1
   playerCheck2: {fileID: 2522236609752417804}
+  player: {fileID: 0}
 --- !u!1 &2522236609278874428
 GameObject:
   m_ObjectHideFlags: 0

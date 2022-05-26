@@ -168,7 +168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4795363162621231457, guid: 1e64c9430ae163d4cba423380788a4a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   groundCheck: {fileID: 6163329751179562767}
-  groundCheckRadius: 0.3
+  groundCheckRadius: 0.7
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -226,6 +226,7 @@ MonoBehaviour:
     m_Bits: 128
   grenade: {fileID: 3409042329030652741, guid: 38a815e48411a51479b231a05cfddbbb, type: 3}
   firePoint: {fileID: 6163329751238146355}
+  player: {fileID: 0}
 --- !u!61 &6163329752764624261
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -272,7 +273,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &6163329752839636914
 GameObject:
   m_ObjectHideFlags: 0

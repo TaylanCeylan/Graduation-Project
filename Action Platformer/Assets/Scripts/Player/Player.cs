@@ -119,7 +119,12 @@ public class Player : MonoBehaviour
             currentHealth = currentHealth + 50;
         }
 
-        if (collision.CompareTag("LevelTrigger"))
+        if (collision.CompareTag("Flame"))
+        {
+            currentHealth = currentHealth - 5;
+        }
+
+        if (collision.CompareTag("Portal"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -127,7 +132,7 @@ public class Player : MonoBehaviour
         if (currentHealth == 0 || currentHealth < 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         healthBar.SetHealth(currentHealth);

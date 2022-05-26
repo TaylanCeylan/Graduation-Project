@@ -14,6 +14,9 @@ TagManager:
   - HealthPotion
   - LevelTrigger
   - PlayerMelee
+  - Flame
+  - Ground
+  - Portal
   layers:
   - Default
   - TransparentFX
@@ -25,7 +28,7 @@ TagManager:
   - Player
   - Arrow
   - Bullet
-  - 
+  - Grenade
   - 
   - 
   - 

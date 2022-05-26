@@ -28,5 +28,10 @@ public class Grenade : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collision.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
