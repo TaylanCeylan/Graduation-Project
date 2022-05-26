@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameObject.SetActive(true);
-    }
+    [SerializeField] public Player player;
 
-    // Update is called once per frame
-    void Update()
+     public bool isBought;
+
+    public void BuyHealthPotion()
     {
-        if (Input.GetKey("escape"))
-        {
-            gameObject.SetActive(false);
-        }
+        player.playerCoins += 50;
+        isBought = true;
     }
 }

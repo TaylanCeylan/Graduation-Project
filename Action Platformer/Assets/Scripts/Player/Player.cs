@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
 
     public HealthBar healthBar;
 
-    [HideInInspector]
     public int currentHealth;
 
     PlayerInputHandler inputHandler;
@@ -96,22 +95,22 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Axe"))
         {
-            currentHealth = currentHealth - 50;
+            currentHealth = currentHealth - 10;
         }
 
         if (collision.CompareTag("Arrow"))
         {
-            currentHealth = currentHealth - 20;
+            currentHealth = currentHealth - 5;
         }
 
         if (collision.CompareTag("Melee"))
         {
-            currentHealth = currentHealth - 100;
+            currentHealth = currentHealth - 15;
         }
 
         if (collision.CompareTag("Grenade"))
         {
-            currentHealth = currentHealth - 100;
+            currentHealth = currentHealth - 15;
         }
 
         if (collision.CompareTag("HealthPotion"))
@@ -121,7 +120,7 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Flame"))
         {
-            currentHealth = currentHealth - 5;
+            currentHealth = currentHealth - 10;
         }
 
         if (collision.CompareTag("Portal"))
