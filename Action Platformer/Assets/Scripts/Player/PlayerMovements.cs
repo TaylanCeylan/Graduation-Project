@@ -15,6 +15,7 @@ public class PlayerMovements
         {
             rb2D.velocity = Vector2.up * jumpForce;
         }
+
     }
 
     public void WallSlide(Rigidbody2D rb2D, bool isGrounded, bool isTouchingWall, Vector2 input)

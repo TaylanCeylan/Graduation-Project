@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] public AudioSource magicAudio;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        magicAudio.Play();
         //inputHandler.IsShooting = false;
     }
 }

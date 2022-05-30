@@ -18,6 +18,27 @@ public class PlayerInputHandler : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            IsShooting = true;
+        }
+        else
+        {
+            IsShooting=false;
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            IsPerformingMelee = true;
+        }
+        else
+        {
+            IsPerformingMelee=false;
+        }
+    }
+
     public void MoveInput(InputAction.CallbackContext context)
     {
         xInput = context.ReadValue<Vector2>();
@@ -33,6 +54,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.performed)
         {
             IsJumped = true;
+            
         }
 
         if (context.canceled)
@@ -59,9 +81,13 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    public void ShootInput(InputAction.CallbackContext context)
+    /*public void ShootInput(InputAction.CallbackContext context)
     {
         if (context.started)
+        {
+            IsShooting = true;
+        }
+        if (context.performed)
         {
             IsShooting = true;
         }
@@ -70,7 +96,7 @@ public class PlayerInputHandler : MonoBehaviour
             IsShooting = false;
         }
 
-    }
+    }*/
 
     public void MeleeInput(InputAction.CallbackContext context)
     {

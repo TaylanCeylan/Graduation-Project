@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] public int playerCoins = 0;
 
+    [SerializeField] AudioSource melee;
+    [SerializeField] AudioSource step;
+
     public HealthBar healthBar;
 
     public int currentHealth;
@@ -140,6 +143,11 @@ public class Player : MonoBehaviour
         {
             currentHealth = health;
         }
+
+        if (collision.CompareTag("LevelTrigger"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     void CheckSurroundings()
@@ -148,6 +156,16 @@ public class Player : MonoBehaviour
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, whatIsGround);
     }
 
+    public void PlayMelee()
+    {
+        melee.Play();
+    }
+
+    public void PlaySteps() 
+    {
+        step.Play();
+    }
+    
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
