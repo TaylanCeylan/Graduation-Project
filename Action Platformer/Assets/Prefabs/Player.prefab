@@ -413,7 +413,7 @@ MonoBehaviour:
   wallCheck: {fileID: 7362460698470585738}
   wallCheckRadius: 0.4
   health: 100
-  playerCoins: 400
+  playerCoins: 0
   melee: {fileID: 798876755}
   step: {fileID: 798876764}
   healthBar: {fileID: 0}
