@@ -81,23 +81,6 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    /*public void ShootInput(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            IsShooting = true;
-        }
-        if (context.performed)
-        {
-            IsShooting = true;
-        }
-        if (context.canceled)
-        {
-            IsShooting = false;
-        }
-
-    }*/
-
     public void MeleeInput(InputAction.CallbackContext context)
     {
         if (context.started)

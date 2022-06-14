@@ -22,21 +22,13 @@ public class Skeleton : MonoBehaviour
     bool isFacingRight = true;
     bool isPlayerDetected;
 
-    Transform target;
-
     Animator anim;
-
-    Rigidbody2D rb2D;
 
     void Start()
     {
         anim = GetComponent<Animator>();
 
-        rb2D = GetComponent<Rigidbody2D>();
-
         health = 100;
-
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
 
